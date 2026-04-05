@@ -1,5 +1,4 @@
 [tools]
-bun = "1"
 node = "22"
 
 [tasks.test]
