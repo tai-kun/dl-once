@@ -19,7 +19,7 @@ jobs:
 
       - name: "依存関係をインストール"
         run: |
-          npm ci
+          bun ci
           npx playwright install chromium --with-deps
 
       - name: "テスト"
