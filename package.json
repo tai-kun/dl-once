@@ -1,0 +1,49 @@
+{
+  "name": "dl-once",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Downloads only once",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "package.json",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/tai-kun/dl-once",
+  "repository": {
+    "url": "https://github.com/tai-kun/dl-once"
+  },
+  "dependencies": {
+    "@logtape/logtape": "^2.0.5",
+    "asyncmux": "^0.0.4",
+    "call-fn-once": "^0.0.4",
+    "hash-wasm": "^4.12.0",
+    "idb": "^8.0.3",
+    "try-capture-stack-trace": "^0.0.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.29.0",
+    "@rolldown/plugin-babel": "^0.2.2",
+    "@tsconfig/node22": "^22.0.5",
+    "@tsconfig/strictest": "^2.0.8",
+    "@types/node": "^22.19.15",
+    "@vitest/browser": "^4.1.2",
+    "@vitest/browser-playwright": "^4.1.2",
+    "dprint": "^0.53.2",
+    "npm-check-updates": "^19.6.6",
+    "playwright": "^1.59.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.2"
+  },
+  "scripts": {
+    "build": "tsc --project ./.config/tsconfig.build.json"
+  }
+}

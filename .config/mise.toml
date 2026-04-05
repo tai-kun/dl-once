@@ -1,0 +1,36 @@
+[tools]
+bun = "1"
+node = "22"
+
+[tasks.test]
+run = [
+    { task = "test:server" },
+    { task = "test:client" },
+    { task = "test:typecheck" },
+]
+
+[tasks."test:server"]
+run = "npx vitest --config ./.config/vitest.server.ts"
+
+[tasks."test:client"]
+run = "npx vitest --config ./.config/vitest.client.ts"
+
+[tasks."test:typecheck"]
+run = "npx tsc --noEmit --project ./.config/tsconfig.test.json"
+
+[tasks."docs:dev"]
+run = "npx vitepress dev website"
+
+[tasks."docs:build"]
+run = "npx vitepress build website"
+
+[tasks."docs:preview"]
+run = "npx vitepress preview website"
+
+[tasks.update]
+run = [
+    "npx npm-check-updates --target minor -u --cooldown 3",
+    "bun install",
+    "npx playwright install chromium --with-deps",
+    "bun audit",
+]
