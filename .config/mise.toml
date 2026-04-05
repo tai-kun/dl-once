@@ -30,7 +30,7 @@ run = "npx vitepress preview website"
 [tasks.update]
 run = [
     "npx npm-check-updates --target minor -u --cooldown 3",
-    "bun install",
+    "npm install",
     "npx playwright install chromium --with-deps",
-    "bun audit",
+    "npm audit",
 ]
