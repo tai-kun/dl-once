@@ -379,7 +379,7 @@ export default async function downloadOnce(
       const request = await parseTarget(actualTarget);
 
       // 前処理フックを実行します（個別設定のフックを優先）。
-      for (const hook of [...targetHooks.filter(hook => !!hook), ...globalHooks]) {
+      for (const hook of [...targetHooks.filter((hook: IHook | Falsy) => !!hook), ...globalHooks]) {
         await hook.onBeforeDownload?.({
           signal: callbackSignal,
           request,
